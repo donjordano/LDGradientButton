@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Ldgradientbutton by rcdilorenzo</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Ldgradientbutton</h1>
+        <h2>Subclassing UIButton to create UI awesomeness.</h2>
+        <a href="https://github.com/rcdilorenzo/LDGradientButton" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>LDGradientButton</h1>
+
+<p>LDGradientButton is meant to be a replacement for the Apple stock UIButton. It can easily be created either programmatically or with the Storyboard. It also supports the UIAppearence protocol for setting the tint color.</p>
+
+<h2>Installation</h2>
+
+<h3>Submodule</h3>
+
+<p>Download the zip of the project and put the "LDGradientButton" folder in your project. Then simply import "LDGradientButton.h" in the file(s) you would like to use it in.</p>
+
+<h3>CocoaPods</h3>
+
+<p>Add this to your Podfile: <code>pod 'LDGradientButton', '&gt;= 0.0.1'</code></p>
+
+<p>To learn more about CocoaPods, please visit their <a href="http://cocoapods.org">website</a>.</p>
+
+<h2>Examples</h2>
+
+<h3>Button With Specific Tint Color</h3>
+
+<div class="highlight"><pre><span class="n">LDGradientButton</span> <span class="o">*</span><span class="n">gradientButton</span> <span class="o">=</span> <span class="p">[[</span><span class="n">LDGradientButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFrame:</span><span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
+<span class="n">gradientButton</span><span class="p">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">addSubview:</span><span class="n">gradientButton</span><span class="p">];</span>
+</pre></div>
+
+<h3>Button With Specific Colors</h3>
+
+<div class="highlight"><pre><span class="n">LDGradientButton</span> <span class="o">*</span><span class="n">gradientButton</span> <span class="o">=</span> <span class="p">[[</span><span class="n">LDGradientButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFrame:</span><span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">50</span><span class="p">)];</span>
+<span class="n">gradientButton</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">@"Example Button"</span><span class="p">;</span>
+<span class="n">gradientButton</span><span class="p">.</span><span class="n">normalTextColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">];</span>
+<span class="n">gradientButton</span><span class="p">.</span><span class="n">highlightTextColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">grayColor</span><span class="p">];</span>
+<span class="n">gradientButton</span><span class="p">.</span><span class="n">topColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nl">colorWithRed:</span><span class="mf">0.98f</span> <span class="nl">green:</span><span class="mf">0.98f</span> <span class="nl">blue:</span><span class="mf">0.98f</span> <span class="nl">alpha:</span><span class="mf">1.00f</span><span class="p">];</span>
+<span class="n">gradientButton</span><span class="p">.</span><span class="n">bottomColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nl">colorWithRed:</span><span class="mf">0.87f</span> <span class="nl">green:</span><span class="mf">0.87f</span> <span class="nl">blue:</span><span class="mf">0.87f</span> <span class="nl">alpha:</span><span class="mf">1.00f</span><span class="p">];</span>
+<span class="n">gradientButton</span><span class="p">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">addSubview:</span><span class="n">gradientButton</span><span class="p">];</span>
+</pre></div>
+
+<h2>Customization</h2>
+
+<h3>UIAppearence</h3>
+
+<p>LDGradientButton supports setting a global tint color default for all of the LDGradientButtons in an entire app.</p>
+
+<div class="highlight"><pre><span class="p">[[</span><span class="n">LDGradientButton</span> <span class="n">appearance</span><span class="p">]</span> <span class="nl">setTintColor:</span><span class="p">[</span><span class="n">UIColor</span> <span class="n">redColor</span><span class="p">]];</span>
+</pre></div>
+
+<h3>Properties</h3>
+
+<p>Here are the properties that you can set on each LDGradientButton:</p>
+
+<ul>
+<li>title</li>
+<li>tintColor (recalculates border color and button gradient)</li>
+<li>borderColor</li>
+<li>topColor &amp; bottomColor (used to calculate the normal and highlight gradient)</li>
+<li>normalTextColor &amp; highlightTextColor</li>
+</ul><h2>License (MIT)</h2>
+
+<p>Copyright (C) 2013 Christian Di Lorenzo <a href="mailto:rcddeveloper@icloud.com">rcddeveloper@icloud.com</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/rcdilorenzo/LDGradientButton/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/rcdilorenzo/LDGradientButton/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/rcdilorenzo/LDGradientButton"></a> is maintained by <a href="https://github.com/rcdilorenzo">rcdilorenzo</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
